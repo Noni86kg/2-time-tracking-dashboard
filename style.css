@@ -1,0 +1,273 @@
+:root {
+    --lightRedWork: hsl(15, 100%, 70%);
+    --softBluePlay: hsl(195, 74%, 62%);
+    --LightRedStudy: hsl(348, 100%, 68%);
+    --VioletSocial: hsl(264, 64%, 52%);
+    --LimeGreenExercise: hsl(145, 58%, 55%);
+    --SoftOrangeSelf-care: hsl(43, 84%, 65%);
+
+    --veryDarkBlue: rgb(15, 20, 36);
+    --desaturatedBlue: hsl(235, 45%, 61%);
+    --darkBlue: rgb(28, 31, 74);
+    --paleBlue: hsl(236, 100%, 87%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--veryDarkBlue);
+    height: 100vh;
+}
+h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: 300;
+    padding-bottom: 5px;
+}
+h3 {
+    color: white;
+    font-size: 42px;
+    font-weight: 300;
+}
+h5 {
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+}
+p {
+    font-size: 18px;
+    color: var(--paleBlue);
+}
+.container {
+    width: 78%;
+    height: 58vh;
+    display: grid;
+    grid-template:  "avatar work play study"
+                    "avatar exercise social self-care";
+    grid-template-rows: 50% 50% ;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+/************
+left
+************/
+.left {
+    grid-area: avatar;
+    display: flex;
+    flex-direction: column;
+    background: var(--darkBlue);
+    border-radius: 15px;
+    width: 92%;
+    margin: 0 auto;
+}
+.avat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 12%;
+    border-radius: 15px;
+    background: var(--desaturatedBlue);
+    height: 70%;
+}
+.avat .img {
+    background-image: url(images/image-jeremy.png);
+    width: 82px;
+    height: 82px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin: 10px 0;
+}
+.avat p {
+    padding-bottom: 5px;
+}
+.timeframes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 30%;
+    padding-left: 12%;
+}
+.timeframes p {
+    color: var(--desaturatedBlue);
+    cursor: pointer;
+}
+.timeframes p:hover {
+    color: var(--paleBlue);
+}
+.timeframes .active {
+    color: white;
+}
+/************
+cards
+************/
+article {
+    width: 92%;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow-y: hidden;
+}
+.top {
+    height: 30%;
+    border-radius: 15px 15px 0 0;
+}
+.top div:first-child {
+    position: relative;
+    margin-left: 60%;
+    top: -10px;
+    z-index: 1;
+}
+.top img {
+    position: absolute;
+}
+.card {
+    height: 75%;
+    border-radius: 15px;
+    background: var(--darkBlue);
+    z-index: 5;
+    position: relative;
+    top: -10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5px 15% 5px 12%;
+    cursor: pointer;
+}
+.card:hover {
+    background: rgb(52, 57, 123);
+}
+.name-dot {
+    display: flex;
+    justify-content: space-between;
+}
+.ellipsis:hover {
+    filter: brightness(1.75);
+}
+/************
+work
+************/
+.work {
+    grid-area: work;
+}
+.work .top {
+    background: var(--lightRedWork);
+}
+/************
+play
+************/
+.play {
+    grid-area: play;
+}
+.play .top {
+    background: var(--softBluePlay);
+}
+/************
+study
+************/
+.study {
+    grid-area: study;
+}
+.study .top {
+    background: var(--LightRedStudy);
+}
+/************
+exercise
+************/
+.exercise {
+    grid-area: exercise;
+}
+.exercise .top {
+    background: var(--LimeGreenExercise);
+}
+.exercise .top div:first-child {
+    top: 10px;
+}
+/************
+social
+************/
+.social {
+    grid-area: social;
+}
+.social .top {
+    background: var(--VioletSocial);
+}
+/************
+social
+************/
+.self-care {
+    grid-area: self-care;
+}
+.self-care .top {
+    background: var(--SoftOrangeSelf-care);
+}
+/************
+responsive for ipad
+************/
+@media (max-width:1200px) {
+    .container {
+        width: 80%;
+        height: 90vh;
+        grid-template:  "avatar work "
+                        "avatar play"
+                        "study exercise"
+                        "social self-care";
+        grid-template-rows: 25% 25% 25% 25%;
+        grid-template-columns: 50% 50%;
+    }
+    .left {
+        height: 97%;
+    }
+}
+/************
+responsive for mob
+************/
+@media (max-width:676px) {
+    body {
+        height: auto;
+        padding-top: 25px;
+    }
+    h2 {
+        font-size: 38px;
+    }
+    h3 {
+        font-size: 36px;
+    }
+    .text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .container {
+        width: 90%;
+        height: auto;
+        grid-template:  "avatar "
+                        "work"
+                        "play"
+                        "study"
+                        "exercise"
+                        "social"
+                        "self-care";
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-columns: 100%;
+    }
+    .avat {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10%;
+    }
+    .timeframes {
+        flex-direction: row;
+        padding: 25px;
+        align-items: center;
+    }
+    .timeframes p {
+        font-size: 22px;
+    }
+}
